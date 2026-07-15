@@ -5,7 +5,7 @@
   <title>Clock</title>
 </head>
 <body>
-
+  <h1 class="title">The Digital Analog</h1>
 
     <div class="clock">
       <div class="clock-face">
@@ -15,6 +15,14 @@
       </div>
     </div>
 
+    <div class="digital-datetime">
+      <div id="digital-time"></div>
+      <div id="digital-date"></div>
+    </div>
+
+    <div class="calendar-container">
+      <input type="date" id="calendar" class="calendar-input">
+    </div>
 
   <style>
     html {
@@ -29,17 +37,75 @@
       margin: 0;
       font-size: 2rem;
       display: flex;
-      flex: 1;
+      flex-direction: column;
       min-height: 100vh;
       align-items: center;
+      justify-content: center;
+      background: linear-gradient(135deg, #f5f7fa 0%, #c3cfe2 100%);
+    }
+
+    .title {
+      font-size: 3.5rem;
+      font-weight: 800;
+      color: #2c3e50;
+      margin-bottom: 3rem;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    }
+
+    .digital-datetime {
+      margin-top: 3rem;
+      text-align: center;
+      color: #2c3e50;
+    }
+
+    #digital-time {
+      font-size: 3.5rem;
+      font-weight: bold;
+      font-family: 'Courier New', Courier, monospace;
+      letter-spacing: 2px;
+      text-shadow: 1px 1px 2px rgba(0,0,0,0.1);
+    }
+
+    #digital-date {
+      font-size: 1.5rem;
+      margin-top: 0.5rem;
+      font-weight: 500;
+      color: #34495e;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+
+    .calendar-container {
+      margin-top: 2rem;
+    }
+
+    .calendar-input {
+      padding: 0.8rem 1.5rem;
+      font-size: 1.2rem;
+      border: none;
+      border-radius: 50px;
+      background: white;
+      color: #2c3e50;
+      font-family: inherit;
+      box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+      outline: none;
+      transition: all 0.3s ease;
+      cursor: pointer;
+    }
+
+    .calendar-input:hover {
+      box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+      transform: translateY(-2px);
     }
 
     .clock {
       width: 30rem;
       height: 30rem;
-      border: 20px solid black;
+      border: 20px solid #2c3e50;
       border-radius: 50%;
-      margin: 50px auto;
+      margin: 0 auto;
       position: relative;
       padding: 2rem;
       box-shadow:
